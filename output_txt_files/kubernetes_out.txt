@@ -1,1 +1,13 @@
-<paste log output from Kubernetes-mediated prediction, here>
+# INITIAL RUN
+mike@Michaels-MBP  ~/dev/projects/udacity-cloud-devops-engineer-project-4   main ●  ./run_kubernetes.sh                                                                    ✔  1464  16:01:03
+pod/ml-api created
+NAME     READY   STATUS              RESTARTS   AGE
+ml-api   0/1     ContainerCreating   0          0s
+error: unable to forward port because pod is not running. Current status=Pending
+
+# SECOND RUN
+mike@Michaels-MBP  ~/dev/projects/udacity-cloud-devops-engineer-project-4   main ●  ./run_kubernetes.sh                                                                  1 ↵  1465  16:01:14
+NAME     READY   STATUS    RESTARTS   AGE
+ml-api   1/1     Running   0          8s
+Forwarding from 127.0.0.1:8080 -> 80
+Forwarding from [::1]:8080 -> 80
