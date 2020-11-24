@@ -25,18 +25,46 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 
 ## Setup the Environment
 
-* Create a virtualenv and activate it
+* Create a virtualenv and activate it by executing `python3 -m venv venv`
+* Source the virtual environment: `source venv/bin/activate`
 * Run `make install` to install the necessary dependencies
 
 ### Running `app.py`
 
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+3. Run in Kubernetes:  `./upload_docker.sh && ./run_kubernetes.sh`
 
 ### Kubernetes Steps
 
 * Setup and Configure Docker locally
 * Setup and Configure Kubernetes locally
+* Create a kubernetes secret to store the credentials of the private Docker registry
+  ```bash
+    kubectl create secret docker-registry regcred \
+        --docker-server=https://index.docker.io/v1/ \
+        --docker-username=<DOCKERHUB_USERNAME> \
+        --docker-password=<DOCKERHUB_PASSWORD> \
+        --docker-email=<DOCKER_EMAIL>
+  ```
 * Create Flask app in Container
 * Run via kubectl
+
+## Directory Structure
+
+| Directory/File | Description |
+| ---- | ----------- |
+| `.circleci/config.yml` | CircleCI configuration |
+| `model_data` | Trained model data for housing prices in Boston |
+| `output_txt_files` | Docker and Kubernetes log output |
+| `app.py` | REST Endpoint for predicting housing prices in Boston |
+| `Dockerfile` | Dockerfile containing the application and its dependencies |
+| `make_prediction.sh` | Calls prediction REST endpoint and simulates sample prediction |
+| `Makefile` | Makefile to simplify project setup and other frequent tasks |
+
+| `predictpod.yaml` | Kubernetes Pod template file, used for deployment into cluster |
+| `README.md` | This readme |
+| `requirements.txt` | Python requirements for building, testing and linting app |
+| `run_docker.sh` | Convenience shell script to help building docker container |
+| `run_kubernetes.sh` | Convenience shell scirpt to deploy to kubernetes cluster |
+| `upload_docker.sh` | Convenience shell script to tag and publish locally built image to private repo on dockerhub |
