@@ -60,11 +60,8 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 | `app.py` | REST Endpoint for predicting housing prices in Boston |
 | `Dockerfile` | Dockerfile containing the application and its dependencies |
 | `make_prediction.sh` | Calls prediction REST endpoint and simulates sample prediction |
-| `Makefile` | Makefile to simplify project setup and other frequent tasks |
-
-| `predictpod.yaml` | Kubernetes Pod template file, used for deployment into cluster |
-| `README.md` | This readme |
-| `requirements.txt` | Python requirements for building, testing and linting app |
-| `run_docker.sh` | Convenience shell script to help building docker container |
-| `run_kubernetes.sh` | Convenience shell scirpt to deploy to kubernetes cluster |
-| `upload_docker.sh` | Convenience shell script to tag and publish locally built image to private repo on dockerhub |
+| `Makefile` | Build file of the project |
+| `requirements.txt` | Python requirements |
+| `run_docker.sh` | Shell script for creating and running docker container |
+| `run_kubernetes.sh` | Shell script to deploy docker container on Kubernetes cluster |
+| `upload_docker.sh` | Shell script for uploading locally built docker image to dockerhub repository |
