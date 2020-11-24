@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![mithie](https://circleci.com/gh/mithie/udacity-cloud-devops-engineer-project-4.svg?style=svg)](https://circleci.com/gh/mithie/udacity-cloud-devops-engineer-project-4)
 
 ## Project Overview
 
